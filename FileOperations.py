@@ -24,3 +24,11 @@ for i, line in enumerate(File1.splitlines()):
 book_titles=sorted(list(set(book_titles)))
 print(f"Here are available unique book titles {len(book_titles)}: \n",book_titles)
  
+#Writing to a new file about the titles
+filepath2 = filepath.replace("sales.csv","sales_output.csv") 
+
+with open(filepath2,"w") as File2:
+    File2.write("These are unique titles available:\n")
+    for l in book_titles:
+        File2.write(l)
+        File2.write("\n")
