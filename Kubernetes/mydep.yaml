@@ -4,7 +4,7 @@ metadata:
   labels:
     app: adrian_app
   name: mydep
-  namespace: adrian-app-ns
+  namespace: pre-prod
 spec:
   replicas: 3
   selector:
@@ -46,7 +46,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mydep-service
-  namespace: adrian-app-ns
+  namespace: pre-prod
 spec:
   type: ClusterIP
   selector:
