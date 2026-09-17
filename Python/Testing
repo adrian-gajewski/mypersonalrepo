@@ -1,0 +1,11 @@
+ 
+import math
+
+user_input = input('Enter ISBN and length: ')
+if ',' not in str(user_input): 
+   print("Enter comma-separated values.")
+else:
+   attribute=user_input.split(',')[0]
+   value=user_input.split(',')[1]
+   print("First vale:",attribute) 
+   print("Value:",value)   

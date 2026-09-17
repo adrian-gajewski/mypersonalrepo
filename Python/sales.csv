@@ -1,0 +1,11 @@
+Date,OrderID,BookTitle,Author,Category,Quantity,UnitPrice,TotalPrice,PaymentMethod,City
+2026-03-01,1001,The Great Gatsby,F. Scott Fitzgerald,Fiction,2,12.99,25.98,Card,Wroclaw
+2026-03-01,1002,Atomic Habits,James Clear,Self-Help,1,18.50,18.50,Cash,Krakow
+2026-03-02,1003,Sapiens,Yuval Noah Harari,History,3,22.00,66.00,Card,Warsaw
+2026-03-02,1004,Harry Potter and the Sorcerer's Stone,J.K. Rowling,Fantasy,1,15.99,15.99,Online,Gdansk
+2026-03-03,1005,The Hobbit,J.R.R. Tolkien,Fantasy,2,14.50,29.00,Card,Wroclaw
+2026-03-03,1006,1984,George Orwell,Dystopian,1,13.20,13.20,Cash,Poznan
+2026-03-04,1007,To Kill a Mockingbird,Harper Lee,Fiction,2,11.80,23.60,Online,Warsaw
+2026-03-04,1008,The Lean Startup,Eric Ries,Business,1,21.75,21.75,Card,Krakow
+2026-03-05,1009,The Alchemist,Paulo Coelho,Fiction,4,10.99,43.96,Cash,Wroclaw
+2026-03-05,1010,Deep Work,Cal Newport,Productivity,1,19.99,19.99,Online,Gdansk
