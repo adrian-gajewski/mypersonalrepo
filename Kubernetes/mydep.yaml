@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: adrian_app
+  name: mydep
+  namespace: adrian-app-ns
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: adrian_app
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1       # Number or percentage of pods that can be created above the desired number of pods
+      maxUnavailable: 0 # Number or percentage of pods that can be unavailable during
+  template:
+    metadata:
+      labels:
+        app: adrian_app
+    spec:
+      containers:
+      - image: nginx:latest
+        name: nginx
+        resources: 
+          requests:
+            memory: 256Mi
+          limits:
+            memory: 512Mi
+        env:
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        command: ["/bin/sh", "-c"]
+        args:
+          - |
+            echo "<h1>Pod working on your request is: $POD_NAME</h1>" > /usr/share/nginx/html/index.html
+            nginx -g 'daemon off;'
+
+status: {}
+---
+#ClusterIP
+apiVersion: v1
+kind: Service
+metadata:
+  name: mydep-service
+  namespace: adrian-app-ns
+spec:
+  type: ClusterIP
+  selector:
+    app: adrian_app
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
